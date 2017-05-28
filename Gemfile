@@ -33,12 +33,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# The following are added gems
 # Gem for pagination
 gem 'will_paginate', '~> 3.1.0'
 # Materialize for CSS
 gem 'materialize-sass'
 # Materialize symbols
 gem 'material_icons'
+# Gem for user authentication
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
