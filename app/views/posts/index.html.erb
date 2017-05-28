@@ -6,6 +6,10 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Date posted</th>
     </tr>
   </thead>
 
@@ -16,6 +20,7 @@
         <td><%= link_to 'Read', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.created_at.to_date %></td>
       </tr>
     <% end %>
   </tbody>
