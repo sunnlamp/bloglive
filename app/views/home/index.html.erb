@@ -1,18 +1,17 @@
-<div class"row">
-  <div style="width:100%" class="col s12 m7 splash-image">
-    <div class="card">
-      <div class="card-content">
-        <h3 class="center header-text">Welcome to Bloglive</h3>
-        <h6 class="center">Create your own blog. It's free and simple.</h6>
-      </div>
-      <div class="card-image">
-        <div>
-          
-        </div>
-        <%= image_tag "community.jpg", data: { title: "Join a global
-        community today." } %>
-
-      </div>
-    </div>
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag "community.jpg", class: 'responsive-img' %></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h2 class="header">Bloglive</h2>
+    <% if user_signed_in? %>
+      <p>Welcome, <%= current_user.email %> </p>
+    <% else %>
+      <p class="grey-text text-darken-3 lighten-3">Welcome.</p>
+      <%= link_to "Start your blog", new_user_registration_path, class: "btn red accent-1 white-text" %>
+    <% end %>
   </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag "macandpaper.jpg", class: 'responsive-img' %></div>
 </div>

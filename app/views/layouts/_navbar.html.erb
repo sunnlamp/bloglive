@@ -1,6 +1,12 @@
 <nav>
-  <div class="nav-wrapper red darken-2">
-    <a href="#" class="brand-logo left">Bloglive</a>
-    <%= link_to "Sign In", "#", class: "white-text right navbar-signin" %>
+  <div class="nav-wrapper red accent-2">
+    <%= link_to "Bloglive", root_path, class: "brand-logo left" %>
+    <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, class: "white-text right navbar-signin" %>
+      <%= link_to "Posts", posts_path, class: "white-text right navbar-signin" %>
+    <% else %>
+      <%= link_to "Sign In", user_session_path, class: "white-text right navbar-signin" %>
+    <% end %>
+
   </div>
 </nav>

@@ -4,9 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page=> 10).order('id DESC')
+    @posts = current_user.posts.paginate(:page => params[:page], :per_page=> 10).order('id DESC')
   end
-
   # GET /posts/1
   # GET /posts/1.json
   def show

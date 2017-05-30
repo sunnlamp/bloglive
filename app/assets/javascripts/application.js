@@ -15,5 +15,6 @@
 //= require jquery
 //= require turbolinks
 //= require materialize-sprockets
-$('#textarea1').val('New Text');
-$('#textarea1').trigger('autoresize');
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
