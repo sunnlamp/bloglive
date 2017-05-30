@@ -8,8 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="container">
+  <body class="red lighten-2">
+    <%= render 'layouts/navbar' %>
+    <div class="<%= 'container' if controller.controller_name != 'home' %>">
       <%= yield %>
     </div>
   </body>
