@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  resources :comments
+
   root to: 'home#index'
   devise_for :users
-  resources :posts
+  
+  resources :posts do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
 
   resources :users do
     member do
