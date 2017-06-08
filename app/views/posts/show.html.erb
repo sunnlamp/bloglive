@@ -15,9 +15,11 @@
   <%= f.submit "Add Comment" %>
 <% end %>
 
-<ul>
-  <%= render(partial: 'comments/comment', collection: @post.comments) %>
-</ul>
+<% if user_signed_in? %>
+  <ul class="collection">
+    <%= render(partial: 'comments/comment', collection: @post.comments) %>
+  </ul>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

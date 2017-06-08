@@ -4,7 +4,7 @@
     <% if user_signed_in? %>
       <%= render 'layouts/posts_navbar' if
          controller.controller_name == 'posts'%>
-      <%= link_to "Sign out", destroy_user_session_path, class: "white-text right navbar-signin" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "white-text right navbar-signin" %>
 
     <% else %>
       <%= link_to "Sign In", user_session_path, class: "white-text right navbar-signin" %>
