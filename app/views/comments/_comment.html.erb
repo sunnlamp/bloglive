@@ -1,5 +1,6 @@
 <li class="collection-item">
   <%= comment.body %> -
+  <%= user_id_to_email(comment.user_id) %> -
   <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
 
   <%= form_for [comment, Comment.new] do |f| %>

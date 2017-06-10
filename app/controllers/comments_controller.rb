@@ -6,9 +6,9 @@ before_action :find_commentable
   end
 
   def create
-    @comment.user_id = current_user.id
-    @comment = @commentable.comments.new(comment_params)
 
+    @comment = @commentable.comments.new(comment_params)
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         format.html { redirect_to posts_url}
@@ -26,7 +26,7 @@ before_action :find_commentable
       params.require(:comment).permit(:body)
     end
     def set_comment
-      @comment = Post.find(:post_id, :user_id, params[:id])
+      @comment = Post.find(params[:id])
     end
     def find_commentable
       @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
