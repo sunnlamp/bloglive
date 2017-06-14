@@ -2,8 +2,9 @@
   <div class="nav-wrapper red accent-2">
     <%= link_to "Bloglive", root_path, class: "brand-logo left" %>
     <% if user_signed_in? %>
+      <%= link_to "Profile", edit_user_registration_path, class: "white-text right navbar-signin" %>
       <%= render 'layouts/posts_navbar' if
-         controller.controller_name == 'posts'%>
+         controller.controller_name != 'posts'%>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "white-text right navbar-signin" %>
 
     <% else %>

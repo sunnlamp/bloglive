@@ -5,7 +5,7 @@
   <div class="row container">
     <h2 class="header">Bloglive</h2>
     <% if user_signed_in? %>
-      <p>Welcome, <%= current_user.first_name %> </p>
+      <p>Welcome, <%= current_user.first_name || current_user.email %> </p>
     <% else %>
       <p class="grey-text text-darken-3 lighten-3">Welcome.</p>
       <%= link_to "Start your blog", new_user_registration_path,
