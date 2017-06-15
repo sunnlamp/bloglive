@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'home#index'
+
   devise_for :users do
     member do
       get :following, :followers
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
   resources :comments do
     resources :comments
   end
+
+  resources :relationships
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
