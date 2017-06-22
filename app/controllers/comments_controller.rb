@@ -6,12 +6,12 @@ before_action :find_commentable
   end
 
   def create
-
     @comment = @commentable.comments.new(comment_params)
     @comment.user_id = current_user.id
+
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to posts_url}
+        format.html { redirect_back fallback_location: @post }
         format.json { render json: @resource }
       end
     end
@@ -29,8 +29,8 @@ before_action :find_commentable
       @comment = Post.find(params[:id])
     end
     def find_commentable
-      @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-      @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
+      @commentable = Comment.find(params[:comment_id]) if params[:comment_id]
+      @commentable = Post.find(params[:post_id]) if params[:post_id]
     end
 
 end
