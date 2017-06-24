@@ -1,5 +1,21 @@
 <% will_paginate @users %>
-<% @users.each do |user| %>
-  <%= link_to "#{user.username}", "/users/#{user.username}", class: 'btn' %>
-  <%= user.email %><br/>
-<% end %>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Member Since</th>
+        <th>Bio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to "#{user.username}", "/users/#{user.username}" %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.bio %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
