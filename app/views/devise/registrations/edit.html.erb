@@ -17,7 +17,7 @@
     <%= f.label :username %>
     <%= f.text_field :username, autofocus: true %>
   </div>
-  
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -44,6 +44,11 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div id="textarea1" class="materialize-textarea">
+    <%= f.label :bio %>
+    <%= f.text_field :bio, cols: 50, row: 20 %>
   </div>
 
   <div class="actions">

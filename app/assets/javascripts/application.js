@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 //= require jquery
 //= require turbolinks
 //= require materialize-sprockets
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
+//= require home
+//= require users
+//= require_tree .
