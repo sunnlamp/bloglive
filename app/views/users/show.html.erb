@@ -1,7 +1,19 @@
 <div class="col s4">
   <h5><%= @user.username %></h5>
-  <p><%= @user.bio %></p>
-</div>
-<div class="col s4">
-  <%= render 'layouts/user_posts' %>
+  <div>
+    <% if @user.bio == nil %>
+
+    <% else %>
+      <p><%= @user.bio %></p>
+    <% end %>
+  </div>
+  <% if current_user.following?(@user) %>
+    <div>
+      <%= render 'relationships/unfollow_form' %>
+    </div>
+  <% else %>
+    <div class="col s4">
+      <%= render 'relationships/follow_form' %>
+    </div>
+  <% end %>
 </div>

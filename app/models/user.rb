@@ -14,11 +14,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def follow
+  def follow(other_user)
     following << other_user
   end
 
-  def unfollow
+  def unfollow(other_user)
     following.delete(other_user)
   end
 
