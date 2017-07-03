@@ -1,0 +1,3 @@
+<% @posts.each do |post| %>
+  <%= link_to post.title, posts_url(params[post.id]), class: "btn" %>
+<% end %>

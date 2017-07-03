@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users do
     devise_for :users, :path_prefix => 'd'
-    resources :users, :only =>[:show]
+    resources :users, :only => [:show]
     member do
       get :following, :followers
     end
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   match '/users/:id',     to: 'users#show',       via: 'get'
 
   resources :posts do
+    resources :feed, :only => [:index]
     resources :comments
   end
 
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

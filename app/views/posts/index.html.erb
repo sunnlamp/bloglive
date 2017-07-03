@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <% if @post.nil? && user_signed_in? %>
+      <% if current_user.posts.nil? %>
         <h4>You haven't made any posts yet.</h4>
       <% else %>
         <% @posts.each do |post| %>
