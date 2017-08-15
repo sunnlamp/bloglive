@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Blog engine project built using Rails 5.1.1 and styled using Materialize.
 
-* Ruby version
+* A Heroku deployment can be found at the following address: https://powerful-basin-94829.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Initialize the database by running rails db:create followed by rails db:migrate
